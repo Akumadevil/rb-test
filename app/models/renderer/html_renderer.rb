@@ -1,6 +1,6 @@
 require 'slim'
 require 'stringex'
-require './renderer/abstract_renderer'
+require './app/models/renderer/abstract_renderer'
 require './app/models/settings'
 
 class HtmlRenderer

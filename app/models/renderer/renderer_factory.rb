@@ -1,4 +1,4 @@
-require './renderer/html_renderer'
+require './app/models/renderer/html_renderer'
 require './app/models/settings'
 
 class RendererFactory

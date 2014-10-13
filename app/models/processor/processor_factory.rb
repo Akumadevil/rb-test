@@ -1,4 +1,4 @@
-require './processor/xml_processor'
+require './app/models/processor/xml_processor'
 require './app/models/settings'
 
 class ProcessorFactory

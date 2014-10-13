@@ -1,5 +1,5 @@
 require 'nokogiri'
-require './processor/abstract_processor'
+require './app/models/processor/abstract_processor'
 require './app/models/settings'
 
 class Nokogiri::XML::Document
