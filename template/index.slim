@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title =title
+
+  body
+    h1 =title
+
+    - if parent.any?
+    a href="#{parent.last}" #{parent.first}
+
+    div id="links"
+      - links.each do |link|
+        a href="#{link.last}" #{link.first}
+
+    div id="thumbnails"
+      - thumbs.each do |thumb|
+        img src="#{thumb}"

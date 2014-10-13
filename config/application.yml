@@ -1,0 +1,22 @@
+# config/application.yml
+defaults: &defaults
+  input_path: /Users/akumadevil/Downloads/coding-test/works.xml
+  template_path: template/index.slim
+  output_path: /Users/akumadevil/Dropbox/Public/rb2/
+  html_suffix: .htm
+  index_title: Index
+  thumbnail_size: small
+  msg:
+    error:
+      processor_factory_missing: Unknown processor
+      renderer_factory_missing: Unknown renderer
+      abstract_method_access: Abstract method called
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
