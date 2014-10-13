@@ -24,12 +24,12 @@ Simple homework exercise and one of my first forays into Ruby.
  * Designed with a web application background
  * The /bin directory for command line execution
 
-## Enhancements
+## To Do
 
-* access levels (private, protected etc.)
-* unit tests
-* code comments
+* Access levels (private, protected etc.)
+* Unit tests
+* Code comments
 * No way to force processor/renderer to implement inherited methods?
 * Namespacing with module wrappers
-* move code to the app directory
 * Rubydoc generation
+* Cleanup HTML (possible reverse-engineer slim template?)
