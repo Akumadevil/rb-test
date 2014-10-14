@@ -35,7 +35,7 @@ navigation. Batch processor should take the location of the input file and the o
 ## To Do
 
 * Access levels (private, protected etc.)
-* Unit tests. DRY begin statements. Unit test data in separate file? Mock without needing extra getter/setters?
+* Unit tests. DRY begin statements. Unit test data in separate file? Mock without needing extra getter/setters? Data files in right place.
 * Code comments
 * No way to force processor/renderer to implement inherited methods?
 * Namespacing with module wrappers

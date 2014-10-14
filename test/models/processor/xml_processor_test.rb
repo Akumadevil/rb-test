@@ -7,6 +7,8 @@ class XmlProcessorTest < MiniTest::Test
   INPUT_XML_PATH = "../../../data/works.xml"
   THUMBNAIL_PREFIX = "http://ih1.redbubble.net/work."
   THUMBNAIL_SUFFIX = ".1.flat,135x135,075,f.jpg"
+  TEST_INPUT_PATH = "input-path"
+  TEST_INDEX_TITLE = "index-title"
 
   describe "when extending the Nokogiri Document class" do
     before do
@@ -48,30 +50,46 @@ class XmlProcessorTest < MiniTest::Test
     end
   end
 
-  describe "when calling class methods" do
+  describe "when calling the process method" do
     before do
       @mock_renderer = MiniTest::Mock.new
       @xml_processor = XmlProcessor.new
       @xml_processor.renderer = @mock_renderer
     end
 
-    it "should call process method" do
-      Settings.stubs(:input_path).returns("input")
-      Settings.stubs(:index_title).returns("index_title")
+    it "should open and parse the input then render" do
+      Settings.stubs(:input_path).returns(TEST_INPUT_PATH)
+      Settings.stubs(:index_title).returns(TEST_INDEX_TITLE)
+      File.stubs(:open).with(TEST_INPUT_PATH).returns("")
 
-      File.stubs(:open).with("input").returns("bbb")
-      #File.stubs(:new).with(is_a(String)).returns("aaa")
-
-      @mock_renderer.expect(:render, nil, ["", "index_title", [], []])
+      @mock_renderer.expect(:render, false, ["", TEST_INDEX_TITLE, [], []])
       @xml_processor.process
       @mock_renderer.verify
+    end
+  end
 
+  describe "when calling the recursive render" do
+    before do
+      @mock_renderer = MiniTest::Mock.new
+      @xml_processor = XmlProcessor.new
+      @xml_processor.renderer = @mock_renderer
     end
 
-    it "should set the renderer" do
-      #@mock_processor.expect(:renderer=, nil, [TEST_RENDERER_VALUE])
-      #@processor_factory.renderer = TEST_RENDERER_VALUE
-      #@mock_processor.verify
+    it "should call render with correct arguments" do
+      mock_doc = Nokogiri::XML::Document.new
+      mock_doc.expects(:get_thumbs).returns([])
+      mock_doc.expects(:filter).returns([]).twice
+      @mock_renderer.expect(:render, false, ["", TEST_INDEX_TITLE, [], []])
+      @xml_processor.render_recursively(TEST_INDEX_TITLE, mock_doc)
+      @mock_renderer.verify
+    end
+
+    it "should call itself recursively" do
+      doc = Nokogiri::XML(File.open(INPUT_XML_PATH))
+      mock_renderer = Object.new
+      mock_renderer.expects(:render).times(14)
+      @xml_processor.renderer = mock_renderer
+      @xml_processor.render_recursively("", doc)
     end
   end
 end
