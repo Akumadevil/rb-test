@@ -1,6 +1,6 @@
 require 'nokogiri'
-require './app/models/processor/abstract_processor'
-require './app/models/settings'
+require_relative 'abstract_processor'
+require_relative '../settings'
 
 class Nokogiri::XML::Document
   def filter

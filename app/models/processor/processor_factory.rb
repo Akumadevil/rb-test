@@ -1,7 +1,9 @@
-require './app/models/processor/xml_processor'
-require './app/models/settings'
+require_relative 'xml_processor'
+require_relative '../settings'
 
 class ProcessorFactory
+  attr_accessor :processor
+
   def initialize(processor)
     case processor
       when :xml

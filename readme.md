@@ -2,6 +2,12 @@
 
 Simple homework exercise and one of my first forays into Ruby.
 
+## Brief
+
+Supplied with an XML file containing photos from various camera makes and models, create a batch processor to generate a
+static HTML file for each make and model -- plus an index page. Each static page contains relevant thumbnails plus
+navigation. Batch processor should take the location of the input file and the output directory as parameters.
+
 ## Features
 
 * Dependencies
@@ -22,14 +28,18 @@ Simple homework exercise and one of my first forays into Ruby.
  * More familiar to developers
  * Easier to port
  * Designed with a web application background
+ * The /data directory for input XML
+ * The /out directory for generated HTML (currently wired to my Dropbox folder)
  * The /bin directory for command line execution
 
 ## To Do
 
 * Access levels (private, protected etc.)
-* Unit tests
+* Unit tests > test "the truth"
 * Code comments
 * No way to force processor/renderer to implement inherited methods?
 * Namespacing with module wrappers
 * Rubydoc generation
 * Cleanup HTML (possible reverse-engineer slim template?)
+* Main.rb take arguments and fallback to settings
+* Gemfile for dependencies

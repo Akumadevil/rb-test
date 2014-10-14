@@ -1,4 +1,4 @@
-require './app/models/settings'
+require_relative '../settings'
 
 class AbstractRenderer
   def render(title, thumbs, links)

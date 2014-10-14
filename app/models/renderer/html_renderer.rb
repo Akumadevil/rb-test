@@ -1,7 +1,7 @@
 require 'slim'
 require 'stringex'
-require './app/models/renderer/abstract_renderer'
-require './app/models/settings'
+require_relative 'abstract_renderer'
+require_relative '../settings'
 
 class HtmlRenderer
   def render(parent, title, thumbs, links)
@@ -9,12 +9,16 @@ class HtmlRenderer
       links = []
     end
 
-    context = {:parent => [parent, parent.to_url + Settings.html_suffix], :title => title, :thumbs => thumbs,
-               :links => Hash[links.collect { |v| [v, v.to_url + Settings.html_suffix] }]}
+    context = {:parent => [parent, url(parent)], :title => title, :thumbs => thumbs,
+               :links => Hash[links.collect { |v| [v, url(v)] }]}
 
     layout = File.open(Settings.template_path, "rb").read
     l = Slim::Template.new { layout }
     html = l.render(Object.new, context)
-    File.open(Settings.output_path + title.to_url + Settings.html_suffix, 'w') { |file| file.write(html) }
+    File.open(Settings.output_path + url(title), 'w') { |file| file.write(html) }
+  end
+
+  def url(input)
+    input.to_url + Settings.html_suffix
   end
 end

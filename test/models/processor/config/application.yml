@@ -10,7 +10,7 @@ defaults: &defaults
     error:
       processor_factory_missing: Unknown processor
       renderer_factory_missing: Unknown renderer
-      abstract_method_access: Abstract method called, should be overridden by a subclass
+      abstract_method_access: Abstract method called
 
 development:
   <<: *defaults

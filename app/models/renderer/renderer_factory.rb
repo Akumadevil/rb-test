@@ -1,5 +1,5 @@
-require './app/models/renderer/html_renderer'
-require './app/models/settings'
+require_relative 'html_renderer'
+require_relative '../settings'
 
 class RendererFactory
   def initialize(renderer)
