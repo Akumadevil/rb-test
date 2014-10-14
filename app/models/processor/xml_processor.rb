@@ -4,21 +4,21 @@ require_relative '../settings'
 
 class Nokogiri::XML::Document
   def filter
-    self.xpath("//exif//make").collect {|node| node.text}.sort.uniq
+    self.xpath("//exif//make").collect { |node| node.text }.sort.uniq
   end
 
   def get_thumbs
-    self.xpath("//url[@type='" + Settings.thumbnail_size + "']").collect {|node| node.text}
+    self.xpath("//url[@type='" + Settings.thumbnail_size + "']").collect { |node| node.text }
   end
 end
 
 class Nokogiri::XML::NodeSet
   def filter
-    self.xpath("exif//model").collect {|node| node.text}.sort.uniq
+    self.xpath("exif//model").collect { |node| node.text }.sort.uniq
   end
 
   def get_thumbs
-    self.xpath("urls//url[@type='" + Settings.thumbnail_size + "']").collect {|node| node.text}
+    self.xpath("urls//url[@type='" + Settings.thumbnail_size + "']").collect { |node| node.text }
   end
 end
 

@@ -1,7 +1,7 @@
 require 'logger'
-require './app/models/processor/processor_factory'
-require './app/models/renderer/renderer_factory'
-require './app/models/settings'
+require '../app/models/processor/processor_factory'
+require '../app/models/renderer/renderer_factory'
+require '../app/models/settings'
 
 # Entry point into processor execution -- shell only. Can be easily called from a web application or scheduler
 # if required.
