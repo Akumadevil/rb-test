@@ -1,13 +1,11 @@
 # About
 
-Simple homework exercise and one of my first forays into Ruby. See it running in action at:
-https://dl.dropboxusercontent.com/u/27314354/rb2/index.htm
-
-## Brief
-
+Simple homework exercise and one of my first forays into Ruby.
 Supplied with an XML file containing photos from various camera makes and models, create a batch processor to generate a
 static HTML file for each make and model -- plus an index page. Each static page contains relevant thumbnails plus
 navigation. Batch processor should take the location of the input file and the output directory as parameters.
+
+See it running in action at: https://dl.dropboxusercontent.com/u/27314354/rb2/index.htm
 
 ## Features
 
@@ -44,6 +42,7 @@ navigation. Batch processor should take the location of the input file and the o
 ** Leverage a queuing system (e.g. Amazon STS)
 * No tests for main.rb as it resides outside the /app directory of the project
 * Controller as a module to be called from main.rb (or a shell script)
+* Minimalist template (not about my front-end design skills)
 
 ## Failed to...
 
@@ -55,7 +54,3 @@ navigation. Batch processor should take the location of the input file and the o
 * Enforce abstract inheritance (Java thinking not Ruby -- since you can add methods on the fly)
 * Use ActiveSupport for tests outside of Rails
 * Get Bundler to work for unit tests (not important)
-
-## To Do
-
-* Cleanup HTML (possible reverse-engineer slim template?)
