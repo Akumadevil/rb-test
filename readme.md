@@ -42,7 +42,7 @@ See it running in action at: https://dl.dropboxusercontent.com/u/27314354/rb2/in
 ** Leverage a queuing system (e.g. Amazon STS)
 * No tests for main.rb as it resides outside the /app directory of the project
 * Controller as a module to be called from main.rb (or a shell script)
-* Minimalist template (not about my front-end design skills)
+* Minimalist template (not about my front-end design skills). External Javascript (my dropbox).
 
 ## Failed to...
 
