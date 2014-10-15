@@ -10,6 +10,7 @@ class XmlProcessorTest < MiniTest::Test
   THUMBNAIL_PREFIX = "http://ih1.redbubble.net/work."
   THUMBNAIL_SUFFIX = ".1.flat,135x135,075,f.jpg"
   TEST_INPUT_PATH = "input-path"
+  TEST_OUTPUT_PATH = "output-path"
   TEST_INDEX_TITLE = "index-title"
 
   describe "when extending the Nokogiri Document class" do
@@ -60,12 +61,11 @@ class XmlProcessorTest < MiniTest::Test
     end
 
     it "should open and parse the input then render" do
-      Settings.stubs(:input_path).returns(TEST_INPUT_PATH)
       Settings.stubs(:index_title).returns(TEST_INDEX_TITLE)
       File.stubs(:open).with(TEST_INPUT_PATH).returns("")
 
-      @mock_renderer.expect(:render, false, ["", TEST_INDEX_TITLE, [], []])
-      @xml_processor.process
+      @mock_renderer.expect(:render, false, [TEST_OUTPUT_PATH, "", TEST_INDEX_TITLE, [], []])
+      @xml_processor.process(TEST_INPUT_PATH, TEST_OUTPUT_PATH)
       @mock_renderer.verify
     end
   end
@@ -81,8 +81,8 @@ class XmlProcessorTest < MiniTest::Test
       mock_doc = Nokogiri::XML::Document.new
       mock_doc.expects(:get_thumbs).returns([])
       mock_doc.expects(:filter).returns([]).twice
-      @mock_renderer.expect(:render, false, ["", TEST_INDEX_TITLE, [], []])
-      @xml_processor.render_recursively(TEST_INDEX_TITLE, mock_doc)
+      @mock_renderer.expect(:render, false, ["", "", TEST_INDEX_TITLE, [], []])
+      @xml_processor.render_recursively("", TEST_INDEX_TITLE, mock_doc)
       @mock_renderer.verify
     end
 
@@ -91,7 +91,7 @@ class XmlProcessorTest < MiniTest::Test
       mock_renderer = Object.new
       mock_renderer.expects(:render).times(14)
       @xml_processor.renderer = mock_renderer
-      @xml_processor.render_recursively("", doc)
+      @xml_processor.render_recursively("", "", doc)
     end
   end
 end

@@ -31,8 +31,8 @@ class ProcessorFactoryTest < MiniTest::Test
     end
 
     it "should call process method" do
-      @mock_processor.expect(:process, nil)
-      @processor_factory.process
+      @mock_processor.expect(:process, nil, [nil, nil])
+      @processor_factory.process(nil, nil)
       @mock_processor.verify
     end
 

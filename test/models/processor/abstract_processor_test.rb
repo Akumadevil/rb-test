@@ -19,12 +19,12 @@ class AbstractProcessorTest < MiniTest::Test
 
     it "should throw an error" do
       assert_raises RuntimeError do
-        @abstract_processor.process
+        @abstract_processor.process(nil, nil)
       end
     end
 
     it "should display the correct error message" do
-      err = ->{ @abstract_processor.process }.must_raise RuntimeError
+      err = ->{ @abstract_processor.process(nil, nil) }.must_raise RuntimeError
       err.message.must_match Settings.msg.error.abstract_method_access
     end
   end

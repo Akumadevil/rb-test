@@ -1,6 +1,7 @@
 require_relative 'html_renderer'
 require_relative '../settings'
 
+# Factory pattern class returns corresponding concrete implementation class
 class RendererFactory
   attr_accessor :renderer
 
@@ -13,7 +14,7 @@ class RendererFactory
     end
   end
 
-  def render(parent, title, thumbs, links)
-    @renderer.render(parent, title, thumbs, links)
+  def render(output_path, parent, title, thumbs, links)
+    @renderer.render(output_path, parent, title, thumbs, links)
   end
 end

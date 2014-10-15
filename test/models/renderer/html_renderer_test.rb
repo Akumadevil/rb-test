@@ -34,7 +34,7 @@ class HtmlRendererTest < MiniTest::Test
       Slim::Template.stubs(:new).returns(@slim_template)
       @slim_template.stubs(:render).returns(nil)
 
-      @html_renderer.render("a", "b", ["c"], ["d"])
+      @html_renderer.render("", "a", "b", ["c"], ["d"])
     end
   end
 

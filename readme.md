@@ -10,24 +10,25 @@ navigation. Batch processor should take the location of the input file and the o
 
 ## Features
 
-* Dependencies
- * Logger
+* Bundler with Gemfile for dependency management:
  * Nokogiri (requires XCode CLI which requires OSX 10.x)
  * Slim templating engine
  * Stringex string extensions for friendly URLs
  * Settingslogic for global constants
  * Minitest and Mocha for unit testing
+* Logger for main class
 * Processor and renderer factory pattern for extensible architecture (Java background)
 * Extended Nokogiri classes to better support functional programming through method chaining
 * Recursion used for rendering levels (makes > models)
 * Arguments (input and output paths) configured in config/application.yml
 * Version control on GitHub
-* Unit test suite run from /test/test_suite.rb
+* Unit test suite run from /test/test_suite.rb. 100% code coverage.
 * Use of singleton methods, method readability (suffixes ! and ?) and functional programming techniques
+* Full code comments
 
 ## Design Decisions
 
-* Rails directory structure over Ruby because
+* Rails directory structure over Ruby because:
  * More familiar to developers
  * Easier to port
  * Designed with a web application background
@@ -35,6 +36,11 @@ navigation. Batch processor should take the location of the input file and the o
  * The /out directory for generated HTML (currently wired to my Dropbox folder)
  * The /bin directory for command line execution
 * No access modifiers in classes due to unit testing directly on methods
+* No cleanup (i.e. deleting input file after picking up) for re-running purposes
+* Many 'theoretical' improvements for a real system:
+** Move to a web application (i.e. Rails)
+** Multiple jobs running on different threads
+** Leverage a queuing system (e.g. Amazon STS)
 
 ## Failed to...
 
@@ -48,8 +54,6 @@ navigation. Batch processor should take the location of the input file and the o
 
 ## To Do
 
-* Code comments
 * Rubydoc generation
 * Cleanup HTML (possible reverse-engineer slim template?)
 * Main.rb take arguments and fallback to settings
-* Gemfile for dependencies

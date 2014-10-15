@@ -1,4 +1,4 @@
-# config/application.yml
+# Properties file used by the Settingslogic gem
 defaults: &defaults
   input_path: ../data/works.xml
   template_path: ../app/views/layouts/template.slim

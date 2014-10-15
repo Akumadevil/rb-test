@@ -30,8 +30,8 @@ class RendererFactoryTest < MiniTest::Test
     end
 
     it "should call render method" do
-      @mock_renderer.expect(:render, nil, ["1", "2", "3", "4"])
-      @renderer_factory.render("1", "2", "3", "4")
+      @mock_renderer.expect(:render, nil, ["1", "2", "3", "4", "5"])
+      @renderer_factory.render("1", "2", "3", "4", "5")
       @mock_renderer.verify
     end
   end

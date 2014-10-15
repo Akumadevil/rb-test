@@ -1,11 +1,11 @@
 require_relative '../settings'
 
-# No reason to stop somebody from instantiating the abstract class because they can add methods to it on the fly.
-# Abstract design pattern out of habit -- smells like Java!
+# Futile attempt at abstract factory pattern in a duck-typing language! Smells like Java...
 class AbstractProcessor
   attr_accessor :renderer
 
-  def process
+  # Abstract method requiring concrete implementation by subclass
+  def process(input_path, export_path)
     raise Settings.msg.error.abstract_method_access
   end
 end

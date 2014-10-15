@@ -1,6 +1,7 @@
 require_relative 'xml_processor'
 require_relative '../settings'
 
+# Factory pattern class returns corresponding concrete implementation class
 class ProcessorFactory
   attr_accessor :processor
 
@@ -13,8 +14,8 @@ class ProcessorFactory
     end
   end
 
-  def process
-    @processor.process
+  def process(input_path, export_path)
+    @processor.process(input_path, export_path)
   end
 
   def renderer=(renderer)
