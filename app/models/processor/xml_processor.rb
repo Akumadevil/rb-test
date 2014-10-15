@@ -1,6 +1,10 @@
-require 'nokogiri'
+#require 'nokogiri'
+require 'rubygems'
+require 'bundler/setup'
 require_relative 'abstract_processor'
 require_relative '../settings'
+
+Bundler.require
 
 # Extend with methods to allow functional programming
 class Nokogiri::XML::Document

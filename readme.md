@@ -54,6 +54,7 @@ navigation. Batch processor should take the location of the input file and the o
 * Mixed Minitest and Mocha mocks depending on my needs (bad?)
 * Enforce abstract inheritance (Java thinking not Ruby -- since you can add methods on the fly)
 * Use ActiveSupport for tests outside of Rails
+* Get Bundler to work for unit tests (not important)
 
 ## To Do
 

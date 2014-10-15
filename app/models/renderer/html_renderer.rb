@@ -1,7 +1,11 @@
-require 'slim'
-require 'stringex'
+#require 'slim'
+#require 'stringex'
+require 'rubygems'
+require 'bundler/setup'
 require_relative 'abstract_renderer'
 require_relative '../settings'
+
+Bundler.require
 
 # Concrete implementation of a HTML renderer that creates static HTML files
 class HtmlRenderer
