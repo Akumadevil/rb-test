@@ -25,7 +25,7 @@ navigation. Batch processor should take the location of the input file and the o
 * Version control on GitHub
 * Unit test suite run from /test/test_suite.rb. 100% code coverage.
 * Use of singleton methods, method readability (suffixes ! and ?) and functional programming techniques
-* Full code comments
+* Full code comments and Rdoc documentation in the /doc directory
 
 ## Design Decisions
 
@@ -58,5 +58,4 @@ navigation. Batch processor should take the location of the input file and the o
 
 ## To Do
 
-* Rubydoc generation
 * Cleanup HTML (possible reverse-engineer slim template?)
