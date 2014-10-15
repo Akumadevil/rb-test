@@ -44,11 +44,11 @@ navigation. Batch processor should take the location of the input file and the o
 * Path to input XML relative to the test_suite and breaks if run xml_processor_test.rb directly (can't set base path)
 * Mixed Minitest and Mocha mocks depending on my needs (bad?)
 * Enforce abstract inheritance (Java thinking not Ruby -- since you can add methods on the fly)
+* Use ActiveSupport for tests outside of Rails
 
 ## To Do
 
 * Code comments
-* Namespacing with module wrappers
 * Rubydoc generation
 * Cleanup HTML (possible reverse-engineer slim template?)
 * Main.rb take arguments and fallback to settings

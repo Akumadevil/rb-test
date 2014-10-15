@@ -15,8 +15,6 @@ module Main
       processor = ProcessorFactory.new(:xml)
       processor.renderer = RendererFactory.new(:html)
       processor.process
-
-      #XmlToStaticHtmlProcessor.process ARGV[0], ARGV[1]
     else
       @log.warn "Please specify two arguments:" +
                     "\n1. The location of the input XML" +
