@@ -1,6 +1,7 @@
 # About
 
-Simple homework exercise and one of my first forays into Ruby.
+Simple homework exercise and one of my first forays into Ruby. See it running in action at:
+https://dl.dropboxusercontent.com/u/27314354/rb2/index.htm
 
 ## Brief
 
@@ -41,6 +42,8 @@ navigation. Batch processor should take the location of the input file and the o
 ** Move to a web application (i.e. Rails)
 ** Multiple jobs running on different threads
 ** Leverage a queuing system (e.g. Amazon STS)
+* No tests for main.rb as it resides outside the /app directory of the project
+* Controller as a module to be called from main.rb (or a shell script)
 
 ## Failed to...
 
@@ -56,4 +59,3 @@ navigation. Batch processor should take the location of the input file and the o
 
 * Rubydoc generation
 * Cleanup HTML (possible reverse-engineer slim template?)
-* Main.rb take arguments and fallback to settings

@@ -1,7 +1,5 @@
 require 'logger'
-require '../app/models/processor/processor_factory'
-require '../app/models/renderer/renderer_factory'
-require '../app/models/settings'
+require '../app/models/controller/batch_processor_controller'
 
 # Entry point into processor execution -- script only executed from command-line
 module Main
@@ -11,10 +9,7 @@ module Main
   def self.makeRocketGoNow
     validateArguments! ARGV
 
-    # Initialise an XML processor and attach a HTML renderer, then process the batch
-    processor = ProcessorFactory.new(:xml)
-    processor.renderer = RendererFactory.new(:html)
-    processor.process(ARGV[0], ARGV[1])
+    BatchProcessorController.run(ARGV[0], ARGV[1])
   end
 
   # Checks for correct run arguments -- otherwise reverts to application.yml defaults

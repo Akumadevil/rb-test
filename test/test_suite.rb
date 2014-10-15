@@ -1,3 +1,4 @@
+require_relative 'models/controller/batch_processor_controller_test'
 require_relative 'models/processor/abstract_processor_test'
 require_relative 'models/processor/processor_factory_test'
 require_relative 'models/processor/xml_processor_test'
