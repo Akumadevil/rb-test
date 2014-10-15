@@ -16,6 +16,7 @@ navigation. Batch processor should take the location of the input file and the o
  * Slim templating engine
  * Stringex string extensions for friendly URLs
  * Settingslogic for global constants
+ * Minitest and Mocha for unit testing
 * Processor and renderer factory pattern for extensible architecture
 * Extended Nokogiri classes to better support functional programming through method chaining
 * Recursion used for rendering levels (makes > models)
@@ -35,7 +36,7 @@ navigation. Batch processor should take the location of the input file and the o
 ## To Do
 
 * Access levels (private, protected etc.)
-* Unit tests. DRY begin statements. Unit test data in separate file? Mock without needing extra getter/setters? Data files in right place.
+* Unit test data in separate file? Mock without needing extra getter/setters? Data files in right place. Mix of Minitest mocks and Mocha
 * Code comments
 * No way to force processor/renderer to implement inherited methods?
 * Namespacing with module wrappers
@@ -44,3 +45,5 @@ navigation. Batch processor should take the location of the input file and the o
 * Main.rb take arguments and fallback to settings
 * Gemfile for dependencies
 * All tests into a suite
+* Add self keyword for singleton methods
+* Add ! and ? to methods

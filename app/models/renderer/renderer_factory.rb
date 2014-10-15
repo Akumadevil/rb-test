@@ -2,6 +2,8 @@ require_relative 'html_renderer'
 require_relative '../settings'
 
 class RendererFactory
+  attr_accessor :renderer
+
   def initialize(renderer)
     case renderer
       when :html
