@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "../../../app/models/processor/abstract_processor"
+require_relative "../../../app/models/processor/abstract_processor"
 
 class AbstractProcessorTest < MiniTest::Test
   TEST_RENDERER_VALUE = "test-renderer";

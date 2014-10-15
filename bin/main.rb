@@ -10,7 +10,7 @@ module Main
 
   # Validates the program arguments and calls the process method to generate the static HTML.
   def self.makeRocketGoNow
-    if validateArguments ARGV
+    if validateArguments? ARGV
 
       processor = ProcessorFactory.new(:xml)
       processor.renderer = RendererFactory.new(:html)
@@ -25,7 +25,7 @@ module Main
   end
 
   # Returns TRUE if there are two arguments passed in.
-  def self.validateArguments(args)
+  def self.validateArguments?(args)
     if args.nil? or args.length != 2
       false
     end

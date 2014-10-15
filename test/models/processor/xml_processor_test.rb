@@ -1,10 +1,12 @@
 require "minitest/autorun"
 require 'mocha'
 require 'mocha/mini_test'
-require "../../../app/models/processor/xml_processor"
+require_relative "../../../app/models/processor/xml_processor"
 
+# Relative path to works.xml from the test_suite.rb with cause a 'No such file or directory' error when running
+# just this class as a test
 class XmlProcessorTest < MiniTest::Test
-  INPUT_XML_PATH = "../../../data/works.xml"
+  INPUT_XML_PATH = "../data/works.xml"
   THUMBNAIL_PREFIX = "http://ih1.redbubble.net/work."
   THUMBNAIL_SUFFIX = ".1.flat,135x135,075,f.jpg"
   TEST_INPUT_PATH = "input-path"

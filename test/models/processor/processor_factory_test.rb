@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "../../../app/models/processor/processor_factory"
+require_relative "../../../app/models/processor/processor_factory"
 
 class ProcessorFactoryTest < MiniTest::Test
   TEST_PROCESSOR_INVALID = :foo

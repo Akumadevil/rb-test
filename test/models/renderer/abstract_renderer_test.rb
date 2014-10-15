@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "../../../app/models/renderer/abstract_renderer"
+require_relative "../../../app/models/renderer/abstract_renderer"
 
 class AbstractRendererTest < MiniTest::Test
   describe "when calling the render method of the abstract class" do

@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "../../../app/models/renderer/renderer_factory"
+require_relative "../../../app/models/renderer/renderer_factory"
 
 class RendererFactoryTest < MiniTest::Test
   TEST_RENDERER_INVALID = :foo

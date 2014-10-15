@@ -17,11 +17,13 @@ navigation. Batch processor should take the location of the input file and the o
  * Stringex string extensions for friendly URLs
  * Settingslogic for global constants
  * Minitest and Mocha for unit testing
-* Processor and renderer factory pattern for extensible architecture
+* Processor and renderer factory pattern for extensible architecture (Java background)
 * Extended Nokogiri classes to better support functional programming through method chaining
 * Recursion used for rendering levels (makes > models)
 * Arguments (input and output paths) configured in config/application.yml
 * Version control on GitHub
+* Unit test suite run from /test/test_suite.rb
+* Use of singleton methods, method readability (suffixes ! and ?) and functional programming techniques
 
 ## Design Decisions
 
@@ -32,18 +34,22 @@ navigation. Batch processor should take the location of the input file and the o
  * The /data directory for input XML
  * The /out directory for generated HTML (currently wired to my Dropbox folder)
  * The /bin directory for command line execution
+* No access modifiers in classes due to unit testing directly on methods
+
+## Failed to...
+
+* Getting a Rakefile to work instead of test_suite.rb (ran with no output)
+* Encapsulate xml_processor_test.rb test data into a separate fixtures file (Rails only?)
+* Mock the factory classes without unnecessary getter/setter for properties (otherwise no ability to mock)
+* Path to input XML relative to the test_suite and breaks if run xml_processor_test.rb directly (can't set base path)
+* Mixed Minitest and Mocha mocks depending on my needs (bad?)
+* Enforce abstract inheritance (Java thinking not Ruby -- since you can add methods on the fly)
 
 ## To Do
 
-* Access levels (private, protected etc.)
-* Unit test data in separate file? Mock without needing extra getter/setters? Data files in right place. Mix of Minitest mocks and Mocha
 * Code comments
-* No way to force processor/renderer to implement inherited methods?
 * Namespacing with module wrappers
 * Rubydoc generation
 * Cleanup HTML (possible reverse-engineer slim template?)
 * Main.rb take arguments and fallback to settings
 * Gemfile for dependencies
-* All tests into a suite
-* Add self keyword for singleton methods
-* Add ! and ? to methods

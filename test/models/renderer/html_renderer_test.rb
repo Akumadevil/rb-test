@@ -1,7 +1,7 @@
 require "minitest/autorun"
 require 'mocha'
 require 'mocha/mini_test'
-require "../../../app/models/renderer/html_renderer"
+require_relative "../../../app/models/renderer/html_renderer"
 
 class HtmlRendererTest < MiniTest::Test
   TEST_TEMPLATE_PATH = "template-path"
@@ -29,12 +29,12 @@ class HtmlRendererTest < MiniTest::Test
 
       # Stub file reading input and writing output
       File.stubs(:open).with(TEST_TEMPLATE_PATH, "rb").returns(@mock_file)
-      File.stubs(:open).with(TEST_OUTPUT_PATH + TEST_URL, "w").returns(@mock_file)
+      File.stubs(:open).with(anything, "w").returns(@mock_file)
 
       Slim::Template.stubs(:new).returns(@slim_template)
       @slim_template.stubs(:render).returns(nil)
 
-      @html_renderer.render("a", "b", "c", "d")
+      @html_renderer.render("a", "b", ["c"], ["d"])
     end
   end
 
