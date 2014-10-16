@@ -18,7 +18,7 @@ See it running in action at: https://dl.dropboxusercontent.com/u/27314354/rb2/in
 * Logger for main class
 * Processor and renderer factory pattern for extensible architecture (over-engineered but good experience) as opposed to
 the more simplistic:
-** processor.open(in).writeIndex(out).writeMakes(out).writeModels(out)
+ * processor.open(in).writeIndex(out).writeMakes(out).writeModels(out)
 * Extended Nokogiri classes to better support functional programming through method chaining
 * Recursion used for rendering levels (makes > models)
 * Arguments (input and output paths) configured in config/application.yml
