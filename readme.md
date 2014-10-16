@@ -21,9 +21,9 @@ the more simplistic:
  * processor.open(in).writeIndex(out).writeMakes(out).writeModels(out)
 * Extended Nokogiri classes to better support functional programming through method chaining
 * Recursion used for rendering levels (makes > models)
-* Arguments (input and output paths) configured in config/application.yml
+* Properties file config/application.yml (including default input and output paths)
 * Version control on GitHub
-* Unit test suite run from /test/test_suite.rb. 100% code coverage.
+* Unit test suite run from /test/test_suite.rb with 100% code coverage (excluding main.rb)
 * Use of singleton methods, method readability (suffixes ! and ?) and functional programming techniques
 * Full code comments and Rdoc documentation in the /doc directory
 
@@ -39,9 +39,9 @@ the more simplistic:
 * No access modifiers in classes due to unit testing directly on methods
 * No cleanup (i.e. deleting input file after picking up) for re-running purposes
 * Many 'theoretical' improvements for a real system:
-** Move to a web application (i.e. Rails)
-** Multiple jobs running on different threads
-** Leverage a queuing system (e.g. Amazon STS)
+ * Move to a web application (i.e. Rails)
+ * Multiple jobs running on different threads
+ * Leverage a queuing system (e.g. Amazon STS)
 * No tests for main.rb as it resides outside the /app directory of the project
 * Controller as a module to be called from main.rb (or a shell script)
 * Minimalist template (not about my front-end design skills). External Javascript (my dropbox).
